@@ -7,8 +7,8 @@ const searchButton=document.getElementById('search-btn');
 // fetch random news articles from the API
 async function fetchRandomNews() {
   try{
-    // const apiUrl=`https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=${apiKey}`;
-    const respones=await fetch(`https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=${apiKey}`);
+    const apiUrl=`https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=${apiKey}`;
+    const respones=await fetch(apiUrl);
     const data=await respones.json();
     return data.articles;
   }catch(error){
@@ -35,8 +35,8 @@ searchButton.addEventListener('click', async()=>{
 
   async function fetchQuery(query) {
     try{
-    // const apiUrl=`https://newsapi.org/v2/everything?q=${query}&pageSize=10&apiKey=${apiKey}`;
-    const respones=await fetch(`https://newsapi.org/v2/everything?q=${query}&pageSize=10&apiKey=${apiKey}`);
+    const apiUrl=`https://newsapi.org/v2/everything?q=${query}&pageSize=10&apiKey=${apiKey}`;
+    const respones=await fetch(apiUrl);
     const data=await respones.json();
     return data.articles;
   }catch(error){
